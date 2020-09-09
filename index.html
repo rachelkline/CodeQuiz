@@ -1,19 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Quiz</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-  <div id="timer"></div>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"></h5>
-    <div id="btnContainer"></div>
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+    <a id="highScores" href="highscores.html">High Scores</a>
+    </div>
+    <div class="col-sm-6">
+    <div id="timer"></div>
+    </div>
+    </div>
+    <div class="row">
+      <div class=col-sm-12>
+        <h1>JavaScript Quiz</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="card" style="width: 30rem; text-align: center;">
+
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <div id="btnContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-    <script src="script.js"></script>
+
+  <style>
+    #timer {
+      float: right;
+    }
+    .card {
+      margin: 0 auto;
+      float: none;
+      margin-bottom: 10px;
+      padding: 10px;
+
+    }
+    body {
+      background-image: url('assets/pipes.png');
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(15, 79, 104);
+      font-family: 'Londrina Outline', cursive;
+      font-size: 80px;
+    }
+
+    button {
+      width: 100%;
+      background-color: rgb(15, 79, 104);
+      font-size: 16px;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin: 4px;
+      padding: 10px;
+    }
+
+    button:hover {
+      background-color: rgb(129, 183, 204);
+      color: white;
+
+    }
+  </style>
+  <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+    <title>High Scores</title>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+        <a id="startOver" href="index.html">Play Again</a>
+        </div>
+        </div>
+        <h1 class="text-center">High Scores</h1>
+        <h3 class="text-center">Add your name to the high scores list!</h3>
+        <br>
+        <div class="users" class="input-group mb-3">
+            <input type="text" class="form-control" id="userID" placeholder="Type Your Name Here"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button type="button" id="button-addon2">Add</button>
+            </div>
+        </div>
+        <ol class="text-center" id="name-input"></ol>
+    </div>
+    <style>
+        body {
+            background-image: url('assets/pipes.png');
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(15, 79, 104);
+            font-family: 'Londrina Outline', cursive;
+            font-size: 80px;
+        }
+
+        h3 {
+            
+
+        }
+
+        button {
+            width: 100%;
+            background-color: rgb(15, 79, 104);
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin: 4px;
+            padding: 10px;
+        }
+
+        button:hover {
+      background-color: rgb(129, 183, 204);
+      color: white;
+
+    }
+    </style>
+    <script type="text/javascript" src="hsscript.js"></script>
+</body>
+
+</html>

@@ -1,10 +1,13 @@
 var timer = 60;
 var time = document.querySelector("#timer");
 var questionBox = document.querySelector(".card-title");
-var btnContainer = document.querySelector("#btnContainer");
+var btnContainer = document.querySelector("#btnContainer")
 var index = 0;
+var score = 0;
+var localStorage = window.localStorage;
 
 
+//Make an array of questions and answers
 var questions = [
     {
         questionTitle: "What should appear at the very end of your JavaScript?",
@@ -43,21 +46,29 @@ var questions = [
     },
 ]
 
-//questionBox.textContent 
 
 
+//Beginning page with a button to start the quiz
+function Start(){
+    questionBox.textContent = "Welcome! Please click the button to begin the quiz.";
+    btnContainer.innerHTML = "";
+    var strtBtn = document.createElement("button");
+    strtBtn.textContent = "START";
+    strtBtn.onclick = quesStart;
+    btnContainer.appendChild(strtBtn);
 
-
-function startTimer() {
-    timer--;
 }
 
+//Quiz starts once the button is cicked
 function quesStart () {
     var myTimer = setInterval(function(){
     timer--;
-    time.textContent = timer + " left remaining"
+    time.textContent = timer + " seconds left remaining"
     if(timer === 0) {
+        alert("Time is up!");
+        window.location = ("highscores.html");
         clearInterval(myTimer);
+        
     }
 
     },
@@ -66,31 +77,49 @@ function quesStart () {
 nextQues ();
 
 }
+
+
+//Fill the card with the question
 function nextQues() {
      questionBox.textContent = questions[index].questionTitle;
         btnContainer.innerHTML = "";
+        
+//Create buttons and fill with possible answers
     questions[index].a.forEach(function(answer,i){
         var aBtn = document.createElement("button");
         aBtn.setAttribute("value", answer);
         aBtn.textContent = answer;
         aBtn.onclick = logicClick;
         btnContainer.appendChild(aBtn);
+        
 
     })
     
 }
 
-quesStart();
+Start();
 
+//If the question is answered correctly, go to next question
 function logicClick() {
     if(this.value === questions[index].correctAnswer) {
         index++;
-        nextQues()
-        
-    }
+        nextQues() 
+//But if it's answered wrong, take away 5 seconds        
+    } else {
+        timer -= 5;
+    };
+};
 
+// function setScoreCount (){
+//     //check if all questions are answered and redirect to high score page
+//     if()
+    
+// };
 
-}
+console.log(index);
+
+// let myScore = 
+// localStorage.setItem("myScore", myScore.value);
 
 // // Pseudocode
 // if(startButtonCLicked) {
