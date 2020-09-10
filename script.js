@@ -98,7 +98,7 @@ function nextQues() {
     
 }
 
-function goNext() {}
+// function goNext() {}
 
 Start();
 

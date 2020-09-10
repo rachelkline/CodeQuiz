@@ -32,22 +32,29 @@ $(document).ready(function () {
             var finalScore = { name: userText, score: score }
             userHS.push(finalScore);
             localStorage.setItem("highscore", JSON.stringify(userHS));
-            var lstorage = JSON.parse(localStorage.getItem("highscore"));
+            var lStorage = JSON.parse(localStorage.getItem("highscore"));
             //userHS.push(lstorage);
            
             //set a for loop that will render a new li for each high score
 
-             for(i = 0; len = userHS.length i++) {
+
+           
+
+             for(i = 0; i < userHS.length; i++) {
               //variable totalScore creates a new list object
               
               var totalScore = $('<li>');
-              totalScore.text("Name: " + lstorage[i].name + "Score: " + lstorage[i].score); 
+              totalScore.text("Name: " + lStorage[i].name + "Score: " + lStorage[i].score); 
                 $('ol').append(totalScore);
 
-            console.log(userHS.length);
+            console.log(userHS[i]);
             
             };
-           
+            // lStorage.forEach((obj, i) => {
+            //     console.log("name", obj.name);
+            //     console.log("score", obj.score);
+
+            // })
 
         });
 
