@@ -16,9 +16,9 @@ $(document).ready(function () {
     saveNamenScore();
     function saveNamenScore() {
         //get stored score from localStorage
-        
+
         var score = JSON.parse(localStorage.getItem('userScore'));
-       
+
 
 
         // };
@@ -31,24 +31,26 @@ $(document).ready(function () {
             //console.log(userText);
             var finalScore = { name: userText, score: score }
             userHS.push(finalScore);
+
             localStorage.setItem("highscore", JSON.stringify(userHS));
             var lStorage = JSON.parse(localStorage.getItem("highscore"));
-            //userHS.push(lstorage);
-           
+
+            userHS.push(lStorage);
+
             //set a for loop that will render a new li for each high score
 
 
-           
 
-             for(i = 0; i < userHS.length; i++) {
-              //variable totalScore creates a new list object
-              
-              var totalScore = $('<li>');
-              totalScore.text("Name: " + lStorage[i].name + "Score: " + lStorage[i].score); 
+
+            for (i = 0; i < userHS.length; i++) {
+                
+                //variable totalScore creates a new list object
+                var totalScore = $('<li>');
+                totalScore.text("Name: " + lStorage[i].name + "\n\nScore: " + lStorage[i].score);
                 $('ol').append(totalScore);
 
-            console.log(userHS[i]);
-            
+                console.log(userHS[i]);
+
             };
             // lStorage.forEach((obj, i) => {
             //     console.log("name", obj.name);
@@ -73,80 +75,6 @@ $(document).ready(function () {
 
 
 
-
-    // var userText = userInput.value;
-    //     // userHS.push(userText);
-    //     userInput.value = "";
-    //     userText.appendTo("#name-input");
-
-
-
-    // function renderUserHiScore() {
-    //      userList.innterHTML = "";
-
-    //         //Render a new li for each user
-    //     for (var i = 0; i < 10; i++) {
-    //         var user = userHS[i];
-
-    //         var li = document.createElement("<li>");
-    //         li.textContent = user;
-    //         li.setAttribute(userList, i);
-    //         userList.appendChild(li);
-
-
-
-
-    //         };
-    //    };
-    // }
-
-
-
-
-
-//  init();
-// function init(); {
-//     //Get stored users from localStorage
-//     //Parsing the JSON string to an object
-//     var storedUsers = JSON.parse(localStorage.getItem("users"));
-
-//     renderUserHiScore();
-// }
-
-// function storeUsers() {
-//     localStorage.setItem("users", JSON.stringify(userHS));
-// }
-
-//When form is submitted...
-
-
-    // storeUsers();
-    // renderUserHiScore();
-    // var newDiv = $("<li>");
-    //     newDiv.text(user);
-    //     $("#name-input").append(newDiv);
-
-// userList.addEventListener("submit", function(event) {
-//     event.preventDefault();
-
-//     var userText = userInput.value.trim();
-
-
-// renderLastRegistered();
-
-// function renderLastRegistered() {
-//     var user = localStorage.getItem ("user");
-//     // var userScore = localStorage.getItem("score");
-// }
-
-
-
-
-
-
-//     localStorage.setItem("user", user);
-//     renderLastRegistered();
-// });
 
 
 
