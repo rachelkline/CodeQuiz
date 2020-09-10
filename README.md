@@ -9,3 +9,5 @@ Once this function is running, the timer has started. I then created buttons in 
 I then saved the score data using local storage. Once re-directed to the High Scores page, the user can enter their name and when the "add" button is pressed, their name will appear next to their score. I made a new array and pushed the previous score data into it with a new variable I made that would include the user input. Then, I crated a for-loop that would render a new list for each high score. This is the only issue I ran into, as my for-loop continued to loop the entire array instead of the objects inside. 
 
 Overall, this assignment was very challenging. I enjoyed learning a lot from it and although I didn't execute it perfectly, I thought I did a pretty good job! I will continue to work on the for loop after submitting this assignment to try to get everything perfect.
+
+*I included a screen grab of my project as I was adivsed to do this in the last homework assignment!!
