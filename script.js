@@ -1,10 +1,10 @@
 var timer = 60;
 var time = document.querySelector("#timer");
 var questionBox = document.querySelector(".card-title");
+var myScore = document.querySelector("#score");
 var btnContainer = document.querySelector("#btnContainer")
 var index = 0;
-var score = 0;
-var localStorage = window.localStorage;
+
 
 
 //Make an array of questions and answers
@@ -81,6 +81,7 @@ nextQues ();
 
 //Fill the card with the question
 function nextQues() {
+    myScore.textContent = "Your Score: " + score
      questionBox.textContent = questions[index].questionTitle;
         btnContainer.innerHTML = "";
         
@@ -99,16 +100,39 @@ function nextQues() {
 
 Start();
 
+var userHS = [];
 //If the question is answered correctly, go to next question
+let score = 0;
 function logicClick() {
+       
+    if(index + 1 >= questions.length) {
+        alert("You've finished!")
+        score++;
+        userHS.push(score);
+        localStorage.setItem('userScore', JSON.stringify(userHS));
+        window.location = ("highscores.html");
+    }
+
+
     if(this.value === questions[index].correctAnswer) {
         index++;
+        score++;
         nextQues() 
-//But if it's answered wrong, take away 5 seconds        
+//But if it's answered wrong, take away 5 seconds 
+//else if the questions[index] does not equal correct answer, go to the next question and subtract 5 seconds    
     } else {
+        nextQues()
         timer -= 5;
     };
+
+    
 };
+
+
+
+// console.log(setItem('score', score));
+
+
 
 // function setScoreCount (){
 //     //check if all questions are answered and redirect to high score page
@@ -116,7 +140,7 @@ function logicClick() {
     
 // };
 
-console.log(index);
+
 
 // let myScore = 
 // localStorage.setItem("myScore", myScore.value);

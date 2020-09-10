@@ -1,69 +1,114 @@
 
 
 //WHAT I NEED TO DO TO GET THIS TO WORK
-
-$(document).ready(function {
-
-    //variables to attach to HTML
-    //FIGURE OUT HOW TO GET SCORE DATA TO LOCAL STORAGE
-    
-    //create an empty array to hold scores
-    var userHS = [];
-
-    
-    //figure out how to make an ordered list for the scores so that when they post, they will post from highest to lowest
-    //Crate a for-loop to iterate through the userHS array
-
-    
-    //ATTACH ON-CLICK EVENT TO ADD BUTTON
-    //APPEND NAME AND SCORE TO DOCUMENT AND STORE IN LOCAL STORAGE
-    var userInput = document.querySelector("#userID");
-    var userList = document.querySelector("#name-input");
-    var submitBtn = document.querySelector("#button-addon2");
-
-    
-
-    init();
+//variables to attach to HTML
+//FIGURE OUT HOW TO GET SCORE DATA TO LOCAL STORAGE
+var userInput = document.querySelector("#userID");
+var userList = document.querySelector("#name-input");
+var submitBtn = document.querySelector("#button-addon2");
+// //create an empty array to hold scores
+var userHS = [];
 
 
+$(document).ready(function () {
+
+    //saveScore();
+    saveNamenScore();
+    function saveNamenScore() {
+        //get stored score from localStorage
+        
+        var score = JSON.parse(localStorage.getItem('userScore'));
+       
 
 
+        // };
 
 
+        //Event listener for button click
+        submitBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            var userText = userInput.value;
+            //console.log(userText);
+            var finalScore = { name: userText, score: score }
+            userHS.push(finalScore);
+            localStorage.setItem("highscore", JSON.stringify(userHS));
+            var lstorage = JSON.parse(localStorage.getItem("highscore"));
+            //userHS.push(lstorage);
+           
+            //set a for loop that will render a new li for each high score
+
+             for(i = 0; i < userHS.length; i++) {
+              //variable totalScore creates a new list object
+              //if the totalScore 
+              var totalScore = $('<li>');
+              totalScore.text("Name: " + lstorage[i].name + "Score: " + lstorage[i].score); 
+               $('ol').append(totalScore);
+
+            console.log(totalScore);
+            
+            };
+           
+
+        });
+
+
+    };
 
 });
 
-function renderUserHiScore() {
-    userList.innterHTML = "";
 
-    //Render a new li for each user
-    for (var i = 0; i < 10; i++) {
-        var user = userHS[i];
 
-        var li = document.createElement("<li>");
-        li.textContent = user;
-        li.setAttribute(userList, i);
-        userList.appendChild(li);
-    }
-}
-submitBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    var userText = userInput.value.trim();
-    userHS.push(userText);
-    userInput.value = "";
 
-});
-function init(); {
-    //Get stored users from localStorage
-    //Parsing the JSON string to an object
-    var storedUsers = JSON.parse(localStorage.getItem("users"));
 
-    renderUserHiScore();
-}
 
-function storeUsers() {
-    localStorage.setItem("users", JSON.stringify(userHS));
-}
+
+    // }, {once : true});
+
+
+
+
+    // var userText = userInput.value;
+    //     // userHS.push(userText);
+    //     userInput.value = "";
+    //     userText.appendTo("#name-input");
+
+
+
+    // function renderUserHiScore() {
+    //      userList.innterHTML = "";
+
+    //         //Render a new li for each user
+    //     for (var i = 0; i < 10; i++) {
+    //         var user = userHS[i];
+
+    //         var li = document.createElement("<li>");
+    //         li.textContent = user;
+    //         li.setAttribute(userList, i);
+    //         userList.appendChild(li);
+
+
+
+
+    //         };
+    //    };
+    // }
+
+
+
+
+
+//  init();
+// function init(); {
+//     //Get stored users from localStorage
+//     //Parsing the JSON string to an object
+//     var storedUsers = JSON.parse(localStorage.getItem("users"));
+
+//     renderUserHiScore();
+// }
+
+// function storeUsers() {
+//     localStorage.setItem("users", JSON.stringify(userHS));
+// }
 
 //When form is submitted...
 
