@@ -98,6 +98,8 @@ function nextQues() {
     
 }
 
+function goNext() {}
+
 Start();
 
 var userHS = [];
@@ -121,8 +123,8 @@ function logicClick() {
 //But if it's answered wrong, take away 5 seconds 
 //else if the questions[index] does not equal correct answer, go to the next question and subtract 5 seconds    
     } else {
-        nextQues()
         timer -= 5;
+        
     };
 
     

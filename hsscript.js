@@ -37,14 +37,14 @@ $(document).ready(function () {
            
             //set a for loop that will render a new li for each high score
 
-             for(i = 0; i < userHS.length; i++) {
+             for(i = 0; len = userHS.length i++) {
               //variable totalScore creates a new list object
-              //if the totalScore 
+              
               var totalScore = $('<li>');
               totalScore.text("Name: " + lstorage[i].name + "Score: " + lstorage[i].score); 
-               $('ol').append(totalScore);
+                $('ol').append(totalScore);
 
-            console.log(totalScore);
+            console.log(userHS.length);
             
             };
            
